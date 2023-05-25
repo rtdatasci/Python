@@ -1,0 +1,27 @@
+An example output of running the script to check memory, cpu and time taken by a script (eg. test_python.py)
+run in terminal: python python_profiler.py test_python.py
+
+MEMORY USAGE:
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    23  50.8867 MiB  50.8867 MiB           1       @profile(precision=4)
+    24                                             def run_script_with_memory_profiling():
+    25  50.8867 MiB   0.0000 MiB           1           run_script(args.script_path)
+
+
+CPU UTILIZATION:
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.001    0.001    0.041    0.041 C:\Users\user\Documents\rtdatasci_github\Python\python_profiler\python_profiler.py:10(run_script)
+        1    0.000    0.000    0.040    0.040 {built-in method builtins.exec}
+        1    0.000    0.000    0.040    0.040 <string>:1(<module>)
+        1    0.040    0.040    0.040    0.040 {built-in method builtins.sum}
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+EXECUTION TIME:
+Time elapsed: 0.0490 seconds
