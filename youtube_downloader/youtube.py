@@ -15,11 +15,36 @@ def download_video(url, save_path):
     except Exception as e:
         print(e)
 
+# where to save the file
+def open_file_dialog():
+    folder = filedialog.askdirectory()
+    if folder:
+        print(f"Selected folder: {folder}")
 
-url = "https://www.youtube.com/watch?v=494e4txpwSg"
-save_path = "C:/Users/rajee/OneDrive/Documents/rtdatasci_github/Python/youtube_downloader"
+    return folder
 
-download_video(url, save_path)
+
+
+# to run the python code inside this directly
+if __name__ == "__main__":
+    # instantiate tk module; create a tkinter window
+    root = tk.Tk()
+    root.withdraw() # hides the window because not necessary to see it
+
+    video_url = input("Please input youtube url: ")
+    save_dir = open_file_dialog()
+
+    if save_dir:
+        print(f"Started download...") 
+        download_video(video_url, save_dir)
+    else:
+        print(f"Invalid save location") 
+
+
+
+# url = "https://www.youtube.com/watch?v=494e4txpwSg"
+# save_path = "C:/Users/rajee/OneDrive/Documents/rtdatasci_github/Python/youtube_downloader"
+# download_video(url, save_path)
 
 
 
