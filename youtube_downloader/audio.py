@@ -5,21 +5,25 @@ import tkinter as tk #2d graphics library
 from tkinter import filedialog
 
 def download_audio(url, output_path):
-    # Download video
-    yt = YouTube(url)
-    ys = yt.streams.filter(only_audio=True).first()
-    ys.download(output_path)
+    try:
+        # Download video
+        yt = YouTube(url)
+        ys = yt.streams.filter(only_audio=True).first()
+        ys.download(output_path)
 
-    # Convert to MP3 using moviepy
-    video_path = output_path + "/" + ys.title + ".mp4"
-    audio_path = output_path + "/" + ys.title + ".mp3"
+        # Convert to MP3 using moviepy
+        video_path = output_path + "/" + ys.title + ".mp4"
+        audio_path = output_path + "/" + ys.title + ".mp3"
 
-    video = VideoFileClip(video_path)
-    video.audio.write_audiofile(audio_path)
+        video = VideoFileClip(video_path)
+        video.audio.write_audiofile(audio_path)
 
-    # Remove the original video file
-    video.close()
-    os.remove(video_path)
+        # Remove the original video file
+        video.close()
+        os.remove(video_path)
+        
+    except Exception as e:
+            print(e)
 
 # where to save the file
 def open_file_dialog():
