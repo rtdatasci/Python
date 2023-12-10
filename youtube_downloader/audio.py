@@ -8,7 +8,8 @@ def download_audio(url, output_path):
     try:
         # Download video
         yt = YouTube(url)
-        ys = yt.streams.filter(only_audio=True).first()
+        # ys = yt.streams.filter(only_audio=True).first()  # this option did not work becaue we need video fps metadata in later step
+        ys = yt.streams.filter(file_extension='mp4').first()
         ys.download(output_path)
 
         # Convert to MP3 using moviepy
