@@ -50,3 +50,5 @@ if __name__ == "__main__":
 
 ## test pytube in terminal:
 #pytube "https://www.youtube.com/watch?v=494e4txpwSg"
+## download audio only in my4
+#pytube "https://www.youtube.com/watch?v=x-gGkfurIYI" -a
