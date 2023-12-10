@@ -1,6 +1,6 @@
 from pytube import YouTube
-import tkinter as tk #2d graphics library
-from tkinter import filedialog
+# import tkinter as tk #2d graphics library
+# from tkinter import filedialog
 import streamlit as st
 import os
 
