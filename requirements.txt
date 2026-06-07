@@ -1,0 +1,4 @@
+langchain-ollama
+browser-use
+pydantic
+python-dotenv
